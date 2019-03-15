@@ -1,0 +1,322 @@
+@import 'normalize.less';
+
+* {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@color-white: #ffffff;
+@color-blue: #59aeff;
+@color-gray: #f0f0f0;
+@color-border: darken(@color-gray, 10%);
+@color-bg: #e1e1e1;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+#common {
+  .border {
+    border: 1px solid @color-border;
+
+    &:hover {
+      border: 1px solid lighten(@color-blue, 5%);
+    }
+
+    &:focus {
+      border: 1px solid @color-blue;
+    }
+
+    &:disabled:hover {
+      border: 1px solid @color-border;
+    }
+  }
+
+  .ab-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input,
+label,
+button,
+textarea,
+select {
+  margin: 0 4px;
+}
+
+.input,
+input {
+  #common > .border;
+  outline: none;
+  padding: 2px;
+  transition: border ease 0.4s;
+  width: 200px;
+}
+
+textarea {
+  #common > .border;
+  outline: none;
+  transition: border ease 0.4s;
+  min-height: 2em;
+  resize: none;
+}
+
+.button,
+input[type='button'],
+button {
+  #common > .border;
+  outline: none;
+  padding: 2px 15px;
+  transition: border ease 0.4s, background-color ease 0.4s;
+  background-color: @color-bg;
+
+  &:hover {
+    background-color: lighten(@color-blue, 30%);
+  }
+
+  &:active {
+    border: 1px solid @color-blue;
+    background-color: lighten(@color-blue, 25%);
+  }
+
+  &:disabled {
+    &:hover {
+      border: 1px solid @color-border;
+      background-color: @color-bg;
+    }
+  }
+}
+
+input[type='checkbox'] {
+  display: none;
+
+  + label.checkbox {
+    padding-left: 17px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border: 1px solid @color-border;
+      background: @color-white;
+      transform: translateY(-50%);
+      transition: border ease 0.4s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 2px;
+      height: 5px;
+      border: 2px solid @color-blue;
+      border-color: transparent;
+      transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
+    }
+
+    &:hover {
+      &::before {
+        border: 1px solid @color-blue;
+      }
+    }
+  }
+
+  &:checked {
+    + label.checkbox {
+      &::before {
+        border: 1px solid @color-blue;
+      }
+      &::after {
+        border-color: transparent @color-blue @color-blue transparent;
+      }
+    }
+  }
+
+  &:disabled {
+    + label.checkbox {
+      &::before {
+        border: 1px solid @color-border;
+        background: darken(@color-bg, 1%);
+      }
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+select {
+  .button;
+  padding: 2px;
+  min-width: 180px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.row + .row {
+  margin-top: 10px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0;
+}
+
+.container-box {
+  position: relative;
+  margin: 15px;
+  padding: 15px 10px;
+  border: 1px solid @color-border;
+
+  &::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, -50%);
+    background: inherit;
+    padding: 0 2px;
+  }
+
+  &.align-right {
+    .row > label {
+      text-align: right;
+    }
+
+    .row > label.checkbox {
+      text-align: left;
+    }
+  }
+}
+
+.container-list {
+  @tools-size: 24px;
+
+  border: 1px solid @color-border;
+  background: @color-white;
+  position: relative;
+  padding: 1px;
+  padding-bottom: @tools-size + 2px;
+
+  .list-items {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .list-item {
+      padding: 2px 3px;
+
+      transition: 0.2s ease;
+      transition-property: background color;
+
+      &:hover {
+        background: lighten(@color-blue, 10%);
+      }
+
+      &:active {
+        background: lighten(@color-blue, 5%);
+      }
+
+      &.selected {
+        background: @color-blue;
+      }
+    }
+  }
+
+  .list-tools {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    display: flex;
+
+    .list-tool {
+      margin: 0;
+      padding: 0;
+      width: @tools-size;
+      height: @tools-size;
+      position: relative;
+
+      @tool-height: 2px;
+      @tool-width: 60%;
+
+      &.list-add {
+        &::after,
+        &::before {
+          #common .ab-center;
+          content: '';
+          width: @tool-width;
+          height: @tool-height;
+          background: @color-blue;
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+
+      &.list-remove {
+        &::before {
+          #common .ab-center;
+          content: '';
+          width: @tool-width;
+          height: @tool-height;
+          background: @color-blue;
+        }
+      }
+
+      &.list-duplicate {
+        @tool-size: 10px;
+        @offset-delta: 7%;
+
+        &::after,
+        &::before {
+          #common .ab-center;
+          content: '';
+          width: @tool-size;
+          height: @tool-size;
+          border-radius: 50%;
+          border: 1px solid @color-blue;
+        }
+
+        &::before {
+          top: 50% + @offset-delta;
+          left: 50% + @offset-delta;
+          background: @color-blue;
+        }
+
+        &::after {
+          top: 50% - @offset-delta;
+          left: 50% - @offset-delta;
+        }
+      }
+    }
+  }
+}
+
+body,
+html,
+div {
+  background-color: @color-gray;
+}
