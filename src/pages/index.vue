@@ -21,17 +21,29 @@ font test => == !=
         <label for="">disabled</label>
         <input type="text" name="" id="" disabled />
       </div>
-      <div class="row">
-        <input type="checkbox" name="" id="checkbox" />
-        <label class="checkbox" for="checkbox">checkbox</label>
+      <div class="">
+        <label>
+          <input type="checkbox" />
+          <span>Checkbox </span>
+        </label>
       </div>
-      <div class="row">
-        <input type="checkbox" name="" id="checkbox1" checked />
-        <label class="checkbox" for="checkbox1">checkbox checked</label>
+      <div class="">
+        <label>
+          <input type="checkbox" checked />
+          <span>Checkbox checked </span>
+        </label>
       </div>
-      <div class="row">
-        <input type="checkbox" name="" id="checkbox2" disabled />
-        <label class="checkbox" for="checkbox2">checkbox disabled</label>
+      <div class="">
+        <label>
+          <input type="checkbox" disabled />
+          <span>Checkbox disabled </span>
+        </label>
+      </div>
+      <div class="">
+        <label>
+          <input type="checkbox" disabled checked />
+          <span>Checkbox disabled </span>
+        </label>
       </div>
       <div class="row">
         <input type="button" value="submit" autofocus />
