@@ -8,6 +8,8 @@
       <a @click="$router.push('./list')">list</a>
       ,
       <a @click="$router.push('./demo')">demo</a>
+      ,
+      <a @click="$router.push('./color')">color</a>
     </p>
 
     <div class="m-auto w-fit">
