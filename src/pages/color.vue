@@ -7,13 +7,18 @@ const unit = 26
 
 const totalWidth = 800
 const gridWidth = computed(() => totalWidth / unit + 'px')
+
+const type = ref('hsl')
 </script>
 
 <template>
   <div>
-    <div class="text-center mb-4">
+    <div class="mb-4 flex items-center justify-center">
+      <label> <input type="radio" name="color-type" value="hsl" v-model="type" /> hsl </label>
+      <label> <input type="radio" name="color-type" value="hwb" v-model="type" /> hwb </label>
+      | Hue:
       <input v-model="hue" type="range" min="0" max="360" />
-      <span> {{ hue }} </span>
+      <span class="w-30px"> {{ hue }} </span>
     </div>
 
     <div class="cube-layout" :style="{ width: `${totalWidth}px` }">
@@ -22,7 +27,7 @@ const gridWidth = computed(() => totalWidth / unit + 'px')
           <div
             class="cube"
             :style="{
-              backgroundColor: `hsl(${hue} ${i * (100 / unit)}% ${j * (100 / unit)}%)`,
+              backgroundColor: `${type}(${hue} ${i * (100 / unit)}% ${j * (100 / unit)}%)`,
               height: `${totalWidth / unit}px`,
             }"
           >
