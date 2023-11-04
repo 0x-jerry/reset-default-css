@@ -1,48 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./src/reset.css" />
-    <link rel="stylesheet" href="./dist/index.css" />
-    <style>
-      .center {
-        margin-left: auto;
-        margin-right: auto;
-      }
+<script lang="ts" setup></script>
 
-      .text-center {
-        text-align: center;
-        margin: 50px 0;
-      }
-
-      .container {
-        display: flex;
-        width: fit-content;
-        margin: auto;
-        padding: 0 10px;
-      }
-
-      .container .left {
-        margin: 15px 0;
-        margin-right: 15px;
-      }
-
-      .container .right {
-        /* margin: 15px 0; */
-      }
-    </style>
-    <title>UI Kit Demo</title>
-  </head>
-  <body>
+<template>
+  <div>
     <h1 class="text-center">UI Kit Example</h1>
     <p class="text-center">
       Examples:
       <a href="index.html">home</a>
     </p>
     <div class="container container-box">
-      <div class="container-list center left" style="width: 180px; height: 600px;">
+      <div class="container-list center left" style="width: 180px; height: 600px">
         <span class="list-tools">
           <button class="list-tool list-add" title="add"></button>
           <button class="list-tool list-remove" title="remove"></button>
@@ -66,8 +32,12 @@
         </div>
       </div>
       <div class="right">
-        <div class="container-box align-right center" style="width: 350px; height: 400px; " data-title="Config">
-          <div class="scroll" style="height: 100%; overflow: auto;">
+        <div
+          class="container-box align-right center"
+          style="width: 350px; height: 400px"
+          data-title="Config"
+        >
+          <div class="scroll" style="height: 100%; overflow: auto">
             <div class="row">
               <label for="">number</label>
               <input type="number" name="" id="" />
@@ -102,7 +72,7 @@ font test => == !=
             <div class="row">
               <input type="button" value="submit" autofocus />
               <button>button</button>
-              <button disabled="disabled">disabled</button>
+              <button disabled>disabled</button>
             </div>
             <div class="row">
               <label for="">select</label>
@@ -122,8 +92,12 @@ font test => == !=
             </div>
           </div>
         </div>
-        <div class="container-box align-right center" style="width: 350px; height: 150px; " data-title="Global Config">
-          <div style="height: 100%; overflow: auto;">
+        <div
+          class="container-box align-right center"
+          style="width: 350px; height: 150px"
+          data-title="Global Config"
+        >
+          <div style="height: 100%; overflow: auto">
             <div class="row">
               <label for="">Proxy Type</label>
               <select name="" id="">
@@ -149,7 +123,7 @@ font test => == !=
         </div>
       </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./src/index.js"></script>
-  </body>
-</html>
+  </div>
+</template>
+
+<style lang="less"></style>

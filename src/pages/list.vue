@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./src/reset.css" />
-    <link rel="stylesheet" href="./dist/index.css" />
-    <style>
-      .center {
-        margin: 0 auto 50px;
-      }
+<script lang="ts" setup></script>
 
-      .text-center {
-        text-align: center;
-        margin: 50px 0;
-      }
-    </style>
-    <title>UI Kit List Example</title>
-  </head>
-
-  <body>
+<template>
+  <div>
     <h1 class="text-center">UI Kit List Example</h1>
     <p class="text-center">
       Home:
       <a href="index.html">UI Kit</a>
     </p>
-    <div class="container-list center" style="width: 300px; height: 600px;">
+    <div class="container-list center" style="width: 300px; height: 600px">
       <span class="list-tools">
         <button class="list-tool list-add" title="add"></button>
         <button class="list-tool list-remove" title="remove"></button>
@@ -48,7 +30,7 @@
         <div class="list-item">first item</div>
       </div>
     </div>
-  </body>
-  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-  <script src="./src/index.js"></script>
-</html>
+  </div>
+</template>
+
+<style lang="less"></style>
