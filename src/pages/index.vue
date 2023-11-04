@@ -2,13 +2,6 @@
 
 <template>
   <div>
-    <h1 class="text-center">UI Kit Example</h1>
-    <p class="text-center">
-      Examples:
-      <a href="list.html">list</a>
-      ,
-      <a href="demo.html">demo</a>
-    </p>
     <div class="container-box align-right center" style="width: 350px" data-title="Title">
       <div class="row">
         <label for="">number</label>

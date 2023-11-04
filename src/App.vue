@@ -1,8 +1,17 @@
 <template>
-  <div class="routes">
-    <button @click="$router.push('/')">Home</button>
-    <button @click="$router.push('/list')">List</button>
-    <button @click="$router.push('/demo')">Demo</button>
+  <div>
+    <h1 class="text-center">UI Kit Example</h1>
+    <p class="text-center">
+      Examples:
+      <a @click="$router.push('./')">home</a>
+      ,
+      <a @click="$router.push('./list')">list</a>
+      ,
+      <a @click="$router.push('./demo')">demo</a>
+    </p>
+
+    <div class="m-auto w-fit">
+      <router-view></router-view>
+    </div>
   </div>
-  <router-view></router-view>
 </template>
