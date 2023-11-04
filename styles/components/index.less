@@ -1,140 +1,19 @@
+// ----------- variables
+@import './variables.less';
+
 // ----------- utils
 @import './utils.less';
 
 // ----------- components
 @import './button.less';
+@import './input.less';
 @import './scrollbar.less';
+@import './textarea.less';
 
 // ------------ backup
-@color-white: #ffffff;
-@color-blue: #59aeff;
-@color-gray: #f0f0f0;
-@color-border: darken(@color-gray, 10%);
-@color-bg: #e1e1e1;
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none !important;
-  margin: 0;
-}
-
-input,
-label,
-button,
-textarea,
-select {
-  margin: 0 4px;
-}
-
-.input,
-input {
-  #utils > .border;
-  outline: none;
-  padding: 2px;
-  transition: border ease 0.4s;
-  width: 200px;
-}
-
-textarea {
-  #utils > .border;
-  outline: none;
-  transition: border ease 0.4s;
-  min-height: 2em;
-  resize: none;
-}
-
-.button,
-input[type='button'],
-button {
-  #utils > .border;
-  outline: none;
-  padding: 2px 15px;
-  transition: border ease 0.4s, background-color ease 0.4s;
-  background-color: @color-bg;
-
-  &:hover {
-    background-color: lighten(@color-blue, 30%);
-  }
-
-  &:active {
-    border: 1px solid @color-blue;
-    background-color: lighten(@color-blue, 25%);
-  }
-
-  &:disabled {
-    &:hover {
-      border: 1px solid @color-border;
-      background-color: @color-bg;
-    }
-  }
-}
-
-input[type='checkbox'] {
-  display: none;
-
-  + label.checkbox {
-    padding-left: 17px;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 12px;
-      height: 12px;
-      border: 1px solid @color-border;
-      background: @color-white;
-      transform: translateY(-50%);
-      transition: border ease 0.4s;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 2px;
-      height: 5px;
-      border: 2px solid @color-blue;
-      border-color: transparent;
-      transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
-    }
-
-    &:hover {
-      &::before {
-        border: 1px solid @color-blue;
-      }
-    }
-  }
-
-  &:checked {
-    + label.checkbox {
-      &::before {
-        border: 1px solid @color-blue;
-      }
-      &::after {
-        border-color: transparent @color-blue @color-blue transparent;
-      }
-    }
-  }
-
-  &:disabled {
-    + label.checkbox {
-      &::before {
-        border: 1px solid @color-border;
-        background: darken(@color-bg, 1%);
-      }
-
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-  }
-}
 
 select {
-  .button;
+  // .button;
   padding: 2px;
   min-width: 180px;
 }
