@@ -3,19 +3,17 @@
 <template>
   <div>
     <div class="container-box align-right center" style="width: 350px" data-title="Title">
-      <div class="row">
-        <label for="">number</label>
-        <input type="number" name="" id="" />
+      <div class="text-right">
+        <label>Number:</label>
+        <input type="number" />
       </div>
-      <div class="row">
-        <label for="">text</label>
-        <input type="text" name="" id="" />
+      <div class="text-right">
+        <label>Text:</label>
+        <input type="text" />
       </div>
-      <div class="col">
-        <p>textarea</p>
-        <textarea name="" id="" cols="30" rows="10">
-font test => == !=
-        </textarea>
+      <div>
+        <p>Textarea</p>
+        <textarea rows="10">font test => == !=</textarea>
       </div>
       <div class="row">
         <label for="">disabled</label>
