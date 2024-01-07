@@ -1,13 +1,14 @@
-// ----------- variables
-@import './variables.scss';
+// ----------- common
+@import './functions';
+@import './mixins';
 
-// ----------- utils
-@import './utils.scss';
+// ----------- variables
+@import './variables';
 
 // ----------- components
-@import './a.scss';
-@import './button.scss';
-@import './input.scss';
-@import './scrollbar.scss';
-@import './select.scss';
-@import './textarea.scss';
+@import './a';
+@import './button';
+@import './input';
+@import './scrollbar';
+@import './select';
+@import './textarea';

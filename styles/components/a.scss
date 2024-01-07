@@ -1,5 +1,5 @@
 a {
-  color: darken($color-blue, 20%);
+  color: adjust-light($color-blue, -20%);
   cursor: pointer;
 
   &:hover {

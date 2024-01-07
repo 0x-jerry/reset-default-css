@@ -1,0 +1,7 @@
+@function adjust-light($color, $relative-light) {
+  @return hsl(from $color h s calc(l + $relative-light));
+}
+
+@function adjust-light-a($color, $abs-light) {
+  @return hsl(from $color h s $abs-light);
+}

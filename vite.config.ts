@@ -8,6 +8,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Unocss from 'unocss/vite'
+import inspect from 'vite-plugin-inspect'
 
 // https://vitejs.dev/config/
 export default defineConfig(({}) => {
@@ -44,6 +45,9 @@ export default defineConfig(({}) => {
 
       // https://github.com/unocss/unocss
       Unocss(),
+
+      // https://github.com/antfu/vite-plugin-inspect
+      inspect(),
     ],
     test: {
       globals: true,
