@@ -68,7 +68,7 @@ input[type='checkbox'] {
   &:disabled {
     &::before {
       border: 1px solid $color-border;
-      background: adjust-light($color-bg, -1%);
+      background: adjust-light($color-bg, -0.01);
     }
 
     &:hover {
@@ -78,8 +78,8 @@ input[type='checkbox'] {
 
   &:disabled:checked {
     &::after {
-      border-color: transparent adjust-light($color-border, -20%) adjust-light($color-border, -20%)
-        transparent;
+      $border-color: adjust-light($color-border, -0.2);
+      border-color: transparent $border-color $border-color transparent;
     }
   }
 }

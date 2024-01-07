@@ -9,12 +9,12 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: adjust-light($color-blue, 30%);
+    background-color: adjust-light($color-blue, 0.3);
   }
 
   &:active {
     border: 1px solid $color-blue;
-    background-color: adjust-light($color-blue, 25%);
+    background-color: adjust-light($color-blue, 0.25);
   }
 
   &:disabled {

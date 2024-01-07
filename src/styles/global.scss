@@ -68,11 +68,11 @@
       transition-property: background color;
 
       &:hover {
-        background: adjust-light($color-blue, 10%);
+        background: adjust-light($color-blue, 0.1);
       }
 
       &:active {
-        background: adjust-light($color-blue, 5%);
+        background: adjust-light($color-blue, 0.05);
       }
 
       &.selected {

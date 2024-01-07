@@ -2,7 +2,7 @@
   border: 1px solid $color-border;
 
   &:hover {
-    border: 1px solid adjust-light($color-blue, 5%);
+    border: 1px solid adjust-light($color-blue, 0.05);
   }
 
   &:focus {
