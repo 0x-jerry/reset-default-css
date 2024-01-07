@@ -7,8 +7,8 @@
       Examples:
       <a href="index.html">home</a>
     </p>
-    <div class="container container-box">
-      <div class="container-list center left" style="width: 180px; height: 600px">
+    <div class="container container-box flex justify-evenly">
+      <div class="container-list center left" style="width: 180px">
         <span class="list-tools">
           <button class="list-tool list-add" title="add"></button>
           <button class="list-tool list-remove" title="remove"></button>
@@ -32,11 +32,7 @@
         </div>
       </div>
       <div class="right">
-        <div
-          class="container-box align-right center"
-          style="width: 350px; height: 400px"
-          data-title="Config"
-        >
+        <div class="container-box align-right center" style="width: 350px" data-title="Config">
           <div class="scroll" style="height: 100%; overflow: auto">
             <div class="row">
               <label for="">number</label>
