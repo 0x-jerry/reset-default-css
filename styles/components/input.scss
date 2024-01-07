@@ -10,7 +10,7 @@ input {
 
 input[type='text'],
 input[type='number'] {
-  #utils > .border;
+  @include border;
   outline: none;
   padding: 2px;
   transition: border ease 0.4s;
@@ -35,8 +35,8 @@ input[type='checkbox'] {
   &::before {
     width: 12px;
     height: 12px;
-    border: 1px solid @color-border;
-    background: @color-white;
+    border: 1px solid $color-border;
+    background: $color-white;
     transform: translateY(-50%);
     transition: border ease 0.4s;
   }
@@ -44,31 +44,31 @@ input[type='checkbox'] {
   &::after {
     width: 2px;
     height: 5px;
-    border: 2px solid @color-blue;
+    border: 2px solid $color-blue;
     border-color: transparent;
     transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
   }
 
   &:hover {
     &::before {
-      border: 1px solid @color-blue;
+      border: 1px solid $color-blue;
     }
   }
 
   &:checked {
     &::before {
-      border: 1px solid @color-blue;
+      border: 1px solid $color-blue;
     }
 
     &::after {
-      border-color: transparent @color-blue @color-blue transparent;
+      border-color: transparent $color-blue $color-blue transparent;
     }
   }
 
   &:disabled {
     &::before {
-      border: 1px solid @color-border;
-      background: darken(@color-bg, 1%);
+      border: 1px solid $color-border;
+      background: darken($color-bg, 1%);
     }
 
     &:hover {
@@ -78,7 +78,7 @@ input[type='checkbox'] {
 
   &:disabled:checked {
     &::after {
-      border-color: transparent darken(@color-border, 20%) darken(@color-border, 20%) transparent;
+      border-color: transparent darken($color-border, 20%) darken($color-border, 20%) transparent;
     }
   }
 }

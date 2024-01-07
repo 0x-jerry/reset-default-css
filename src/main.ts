@@ -2,7 +2,7 @@ import { createApp, Plugin } from 'vue'
 import App from './App.vue'
 
 import 'normalize.css'
-import './styles/global.less'
+import './styles/global.scss'
 import 'uno.css'
 
 const app = createApp(App)

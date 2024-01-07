@@ -1,4 +1,4 @@
-@import '../../styles/all.less';
+@import '../../styles/all.scss';
 
 .row {
   display: flex;
@@ -24,7 +24,7 @@
   position: relative;
   margin: 15px;
   padding: 15px 10px;
-  border: 1px solid @color-border;
+  border: 1px solid $color-border;
 
   &::before {
     content: attr(data-title);
@@ -48,13 +48,13 @@
 }
 
 .container-list {
-  @tools-size: 24px;
+  $tools-size: 24px;
 
-  border: 1px solid @color-border;
-  background: @color-white;
+  border: 1px solid $color-border;
+  background: $color-white;
   position: relative;
   padding: 1px;
-  padding-bottom: @tools-size + 2px;
+  padding-bottom: $tools-size + 2px;
 
   .list-items {
     width: 100%;
@@ -68,15 +68,15 @@
       transition-property: background color;
 
       &:hover {
-        background: lighten(@color-blue, 10%);
+        background: lighten($color-blue, 10%);
       }
 
       &:active {
-        background: lighten(@color-blue, 5%);
+        background: lighten($color-blue, 5%);
       }
 
       &.selected {
-        background: @color-blue;
+        background: $color-blue;
       }
     }
   }
@@ -90,21 +90,21 @@
     .list-tool {
       margin: 0;
       padding: 0;
-      width: @tools-size;
-      height: @tools-size;
+      width: $tools-size;
+      height: $tools-size;
       position: relative;
 
-      @tool-height: 2px;
-      @tool-width: 60%;
+      $tool-height: 2px;
+      $tool-width: 60%;
 
       &.list-add {
         &::after,
         &::before {
-          #utils .ab-center;
+          @include ab-center;
           content: '';
-          width: @tool-width;
-          height: @tool-height;
-          background: @color-blue;
+          width: $tool-width;
+          height: $tool-height;
+          background: $color-blue;
         }
 
         &::after {
@@ -114,37 +114,37 @@
 
       &.list-remove {
         &::before {
-          #utils .ab-center;
+          @include ab-center;
           content: '';
-          width: @tool-width;
-          height: @tool-height;
-          background: @color-blue;
+          width: $tool-width;
+          height: $tool-height;
+          background: $color-blue;
         }
       }
 
       &.list-duplicate {
-        @tool-size: 10px;
-        @offset-delta: 7%;
+        $tool-size: 10px;
+        $offset-delta: 7%;
 
         &::after,
         &::before {
-          #utils .ab-center;
+          @include ab-center;
           content: '';
-          width: @tool-size;
-          height: @tool-size;
+          width: $tool-size;
+          height: $tool-size;
           border-radius: 50%;
-          border: 1px solid @color-blue;
+          border: 1px solid $color-blue;
         }
 
         &::before {
-          top: 50% + @offset-delta;
-          left: 50% + @offset-delta;
-          background: @color-blue;
+          top: 50% + $offset-delta;
+          left: 50% + $offset-delta;
+          background: $color-blue;
         }
 
         &::after {
-          top: 50% - @offset-delta;
-          left: 50% - @offset-delta;
+          top: 50% - $offset-delta;
+          left: 50% - $offset-delta;
         }
       }
     }
@@ -154,5 +154,5 @@
 body,
 html,
 div {
-  background-color: @color-gray;
+  background-color: $color-gray;
 }

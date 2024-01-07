@@ -1,0 +1,27 @@
+input[type='button'],
+button {
+  @include border;
+
+  outline: none;
+  padding: 2px 15px;
+  transition: border ease 0.4s, background-color ease 0.4s;
+  background-color: $color-bg;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($color-blue, 30%);
+  }
+
+  &:active {
+    border: 1px solid $color-blue;
+    background-color: lighten($color-blue, 25%);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    &:hover {
+      border: 1px solid $color-border;
+      background-color: $color-bg;
+    }
+  }
+}
