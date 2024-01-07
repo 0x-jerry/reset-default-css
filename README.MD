@@ -1,3 +1,7 @@
-# tpl-vue
+# Reset Default Style
 
-Template for vue project.
+## Usage
+
+```ts
+import '@0x-jerry/reset-css'
+```

@@ -1,4 +1,6 @@
 {
+  "name": "@0x-jerry/reset-css",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
